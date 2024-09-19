@@ -1,0 +1,6 @@
+<h1>Список залов</h1>
+<ul>
+  {% for hall in halls %}
+    <li>{{ hall.name }} (Размер: {{ hall.size }})</li>
+  {% endfor %}
+</ul>

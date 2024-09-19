@@ -1,0 +1,19 @@
+{% extends 'cinema/base.html' %}
+
+{% block title %}Фильмы{% endblock %}
+
+{% block content %}
+    <h2>Список фильмов</h2>
+    <ul>
+        {% for movie in movies %}
+            <li>
+                <h3>{{ movie.title }}</h3>
+                <p>{{ movie.description }}</p>
+                <p>Дата выхода: {{ movie.release_date }}</p>
+                {% if movie.poster %}
+                    <img src="{{ movie.poster.url }}" alt="{{ movie.title }}" class="movie-poster">
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Cinema{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'cinema/styles.css' %}">
+</head>
+<body>
+<header>
+    <h1>Кинотеатр Форсажей</h1>
+    <nav>
+        <a href="{% url 'home' %}">Home</a>
+        <a href="{% url 'session_list' %}">Sessions</a>
+        <a href="{% url 'movie_list' %}">Tickets</a>  
+        <a href="{% url 'hall_list' %}">Залы</a>
+    </nav>
+</header>
+
+<main>
+    {% block content %}
+    {% endblock %}
+</main>
+
+<footer>
+    <p>&copy; 2024 Cinema Website</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сеансы</title>
+    <!-- Подключение стилей -->
+    <link rel="stylesheet" href="{% static 'cinema/styles.css' %}">
+</head>
+<body>
+    <h2>Список сеансов</h2>
+    <div class="session-container">
+        <ul>
+            {% for session in sessions %}
+                <li class="session-item">
+                    <span class="session-movie">{{ session.movie.title }}</span> 
+                    - <span class="session-hall">{{ session.hall.name }}</span> 
+                    (<span class="session-time">{{ session.start_time }} - {{ session.end_time }}</span>) 
+                    <span class="session-price">Цена: {{ session.price }} грн.</span>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
